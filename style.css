@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f1f5f4;
+  color: #1d2b27;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+/* Header */
+.header {
+  margin: -20px -16px 0;
+  padding: 36px 24px 80px;
+  color: #fff;
+  background: linear-gradient(135deg, #3d2c8d, #6a4bd8 60%, #8e6bff);
+  border-radius: 0 0 30px 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  letter-spacing: 0.06em;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: #d9d0ff;
+  font-size: 0.95rem;
+}
+
+/* Total */
+.total-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: -48px 12px 18px;
+  padding: 18px 20px;
+  background: #fff;
+  border-bottom: 5px solid #6a4bd8;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(61, 44, 141, 0.2);
+}
+
+.total-card h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  color: #5b4bb0;
+  font-size: 1.1rem;
+}
+
+#total-amount {
+  color: #3d2c8d;
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+
+/* Sections */
+.form-section,
+.category-summary-section,
+.list-section {
+  margin-bottom: 16px;
+  padding: 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h3 {
+  margin: 0 0 12px;
+}
+
+/* Form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+label {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccd6d3;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #0f6b5c;
+}
+
+#add-btn {
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  background: #0f6b5c;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background: #0a4d42;
+}
+
+/* Category summary */
+.category-summary-section {
+  background: #fff7ec;
+  border: 2px dashed #f0b86e;
+}
+
+.category-summary-section h3,
+.cat-card {
+  font-family: "Fredoka", "Comic Sans MS", "Trebuchet MS", sans-serif;
+}
+
+.category-summary-section h3 {
+  margin-bottom: 14px;
+  color: #b45309;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 10px;
+  color: #fff;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.cat-card:hover {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+/* Emoji on each card */
+.cat-card::before {
+  font-size: 2rem;
+  line-height: 1;
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+.cat-food::before { content: "🍔"; }
+.cat-travel::before { content: "✈️"; animation-delay: 0.2s; }
+.cat-shopping::before { content: "🛍️"; animation-delay: 0.4s; }
+.cat-education::before { content: "📚"; animation-delay: 0.6s; }
+.cat-other::before { content: "🤷"; animation-delay: 0.8s; }
+
+.cat-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  opacity: 0.95;
+}
+
+.cat-amount {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.cat-food { background: linear-gradient(135deg, #ff9a3c, #ff6a3d); }
+.cat-travel { background: linear-gradient(135deg, #36a3f7, #2563eb); }
+.cat-shopping { background: linear-gradient(135deg, #f472b6, #c026d3); }
+.cat-education { background: linear-gradient(135deg, #4ade80, #16a34a); }
+.cat-other { background: linear-gradient(135deg, #94a3b8, #475569); }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-8px) scale(1.15); }
+  60% { transform: translateY(0) scale(0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-card::before { animation: none; }
+  .cat-card:hover { transform: none; }
+}
+
+/* Expense list */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.list-header h3 {
+  margin: 0;
+}
+
+.expense-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  background: #f1f5f4;
+  border-left: 5px solid #888;
+  border-radius: 8px;
+}
+
+.expense-item.food { border-left-color: #e07b39; }
+.expense-item.travel { border-left-color: #2f7fc1; }
+.expense-item.shopping { border-left-color: #b2478f; }
+.expense-item.education { border-left-color: #3f9b5a; }
+.expense-item.other { border-left-color: #7a7f87; }
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.expense-category {
+  color: #5d6f69;
+  font-size: 0.75rem;
+}
+
+.expense-amount {
+  font-weight: 700;
+}
+
+.delete-btn {
+  padding: 3px 9px;
+  color: #c0392b;
+  background: none;
+  border: 1px solid #c0392b;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #fff;
+  background: #c0392b;
+}
+
+.empty-message {
+  color: #0f6b5c;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  animation: fadeIn 1s ease-out, float 2.5s ease-in-out 1s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empty-message { animation: none; }
+}
